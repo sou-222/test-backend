@@ -29,6 +29,11 @@ class Channel
     private $name;
 
     /**
+     * @ORM\Column(type="string", length=2)
+     */
+    private $language;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true, options={"default": "CURRENT_TIMESTAMP"})
      */
     private $creation_date;
@@ -73,6 +78,18 @@ class Channel
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLanguage(): ?string
+    {
+        return $this->language;
+    }
+
+    public function setLanguage(string $language): self
+    {
+        $this->language = $language;
 
         return $this;
     }

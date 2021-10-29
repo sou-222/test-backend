@@ -32,6 +32,7 @@ final class ChannelAdmin extends AbstractAdmin
         $list
             ->add('num')
             ->add('name')
+            ->add('language')
             ->add(ListMapper::NAME_ACTIONS, null, [
                 'actions' => [
                     'show' => [],
@@ -48,6 +49,7 @@ final class ChannelAdmin extends AbstractAdmin
         $form
             ->add('num')
             ->add('name')
+            ->add('language')
             ;
     }
 
@@ -57,6 +59,7 @@ final class ChannelAdmin extends AbstractAdmin
             ->add('id')
             ->add('num')
             ->add('name')
+            ->add('language')
             ;
     }
 }
