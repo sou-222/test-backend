@@ -16,8 +16,6 @@ final class ChannelAdmin extends AbstractAdmin
 
     function configureQuery(ProxyQueryInterface $query): ProxyQueryInterface
     {
-        $query->andWhere('1 = 0');
-
         return $query;
     }
 
