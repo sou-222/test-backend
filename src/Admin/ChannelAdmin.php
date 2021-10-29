@@ -38,7 +38,9 @@ final class ChannelAdmin extends AbstractAdmin
                     'edit' => [],
                     'delete' => [],
                 ],
-            ]);
+            ])
+            ->add('creation_date')
+            ;
     }
 
     protected function configureFormFields(FormMapper $form): void

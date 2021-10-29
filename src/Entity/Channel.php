@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ChannelRepository::class)
+ * @ORM\HasLifecycleCallbacks
  */
 class Channel
 {
@@ -26,6 +27,26 @@ class Channel
      * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true, options={"default": "CURRENT_TIMESTAMP"})
+     */
+    private $creation_date;
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreationDate()
+    {
+        $this->creation_date = new \DateTime("now");
+        return $this;
+    }
+
+    public function getCreationDate()
+    {
+        return $this->creation_date;
+    }
+
 
     public function getId(): ?int
     {
